@@ -1,0 +1,39 @@
+@import 'mixins.scss';
+
+:host{
+    padding: .7rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-radius: .7rem;
+
+    &.completed{
+        background-color: #6e7881;
+    }
+}
+
+span{
+    display: block;
+    word-wrap: break-word;
+}
+
+$button-size: 2.1rem;
+
+.buttons-wrapper{
+    height: $button-size;
+    gap: .5rem;
+    button{
+        width: $button-size;
+        height: $button-size;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include lt-md{
+        height: calc($button-size * 2);
+    }
+}
+

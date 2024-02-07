@@ -1,0 +1,33 @@
+<span
+    *ngIf="!editMode; else editInput"
+    [class.text-decoration-line-through]="todo.completed"
+    class="col-11 col-md-10"
+>{{ todo.text }}</span>
+<div class="d-flex flex-column flex-lg-row col-1 col-md-2 justify-content-end align-items-end buttons-wrapper">
+    <button
+        class="btn d-flex align-items-center"
+        [ngClass]="editMode ? 'btn-secondary': 'btn-primary'"
+        (click)="toggleEdit();$event.stopPropagation()"
+    >
+        <mat-icon [fontIcon]="editMode ? 'cancel' : 'edit'"></mat-icon>
+    </button>
+    <button
+        class="btn btn-danger d-flex align-items-center"
+        (click)="deleteTodo();$event.stopPropagation()"
+    >
+        <mat-icon fontIcon="delete"></mat-icon>
+    </button>
+</div>
+
+<ng-template #editInput>
+    <form class="w-100" (submit)="updateTextTodo(todoNewText.value)">
+        <input 
+            class="form-control" 
+            type="text" 
+            [value]="todo.text"
+            #todoNewText
+            name="text"
+        >
+        <!-- <input type="submit" hidden> -->
+    </form>
+</ng-template>

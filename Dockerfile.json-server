@@ -1,0 +1,11 @@
+FROM 'node:20.11.0-bullseye'
+
+COPY ./db.json /tmp/db.json
+
+RUN npm install -g json-server
+
+EXPOSE 3000
+
+ENTRYPOINT ["json-server", "--host", "0.0.0.0"]
+
+CMD ["/tmp/db.json"]

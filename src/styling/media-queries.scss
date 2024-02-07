@@ -1,0 +1,6 @@
+@import 'variables.scss';
+
+// General font size for rem
+@media screen and (max-width:$screen-xs-max) {
+    html{font-size: 13px;}
+}

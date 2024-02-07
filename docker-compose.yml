@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  angular:
+    build: .
+    ports:
+      - 4200:4200
+
+  json-server:
+    build: 
+      context: .
+      dockerfile: Dockerfile.json-server
+    ports:
+      - 3000:3000
+    volumes:
+      - /tmp
+    

@@ -1,0 +1,27 @@
+@import 'variables.scss';
+
+
+@mixin xs {
+    @media screen and (max-width: $screen-xs-max){
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (min-width: calc($screen-xs-max+1)) and (max-width: $screen-sm-max){
+        @content;
+    }
+}
+
+
+@mixin lt-sm {
+    @media screen and (max-width: $screen-sm-max){
+        @content;
+    }
+}
+
+@mixin lt-md {
+    @media screen and (max-width: $screen-md-max){
+        @content;
+    }
+}

@@ -1,0 +1,6 @@
+<form [formGroup]="newTodoForm" (ngSubmit)="addTodo()">
+    <input [ngClass]="{ 'is-invalid' : invalidTextFormat }" type="text" class="form-control" formControlName="text"/>
+    <mat-slide-toggle formControlName="completed">
+        Completado
+    </mat-slide-toggle>
+</form>
